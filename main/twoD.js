@@ -10,8 +10,7 @@ var a = [];
 
 function twodimention(){
     read.question("Enter the row elements: ", function(a){
-        read.on('line', line => {
-            a.push(line);
+        
         });
         read.question("Enter the column elements: ", function () {
             
