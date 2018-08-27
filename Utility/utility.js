@@ -1,4 +1,15 @@
 const _ = require('lodash');
+var swap = function(s1,i,j){
+
+        var temp;
+        
+        var charArray = s1.split("");
+        temp = charArray[i] ;
+        charArray[i] = charArray[j];
+        charArray[j] = temp;
+        return  
+       
+}
 module.exports ={
    
     hello : function(userinput)
@@ -137,6 +148,71 @@ module.exports ={
     distance : function(n1,n2){
         var result = Math.sqrt((Math.pow(2,n1)+Math.pow(2,n2)));
         console.log("The Distance is : "+Math.round(result));
+    },
+
+    quadratic : function(a,b,c){
+        var d = (b*b)-(4*a*c);
+        var r1 = (-b+Math.sqrt(d));
+        var r2 = (-b-Math.sqrt(d));
+
+        console.log("Both Roots of Quadratic equation "+a+"x^2 "+b+"x "+c+" = 0 "+"are : "+Math.round(r1)+" and "+Math.round(r2));
     }
+
+}
+
+    // function permutation(s,l,r){
+        
+
+    //     if(l==r){
+    //         console.log(s);
+    //     }else{
+    //         for(var i=l; i<=r; i++){
+    //             s = swap(s,l,i);
+    //             permutation(s,l+1,r);
+    //             s = swap(s,l,i);
+
+    //         }
+    //     }
+    //     console.log(s);
+
+    // }
+
+    module.exports ={
+
+       // permutation: permutation,
+    windchill : function(n1,n2){
+
+        
+        if(t<50 && (v>3 && v<120)){
+
+            var w = 35.74 + 0.6215*t + (0.4275*t-35.75);
+
+            console.log ((Math.pow(0.16,v)));
+
+        }
+    },
+
+    permutation : function(s){
+
+        var str = [];
+
+        if(s.length==0){
+            str.push(s);
+            return str;
+        }
+
+        for (var i=0; i<s.length; i++){
+            var first = s[i];
+            var charleft = s.substring(0,i)+s.substring(i+1);
+            var inner = permutation(charleft);
+            for (var j=0; j<inner.length; j++){
+                str.push(first+inner[j]);
+                console.log(str);
+            }
+            
+        }
+        
+    }
+
         
 }
